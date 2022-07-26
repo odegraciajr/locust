@@ -91,6 +91,7 @@ def get_html_report(environment, show_download_link=True):
         static_css="\n".join(static_css),
         show_download_link=show_download_link,
         locustfile=environment.locustfile,
+        report_title=", ".join(environment.parsed_options.tags),
         tasks=escape(dumps(task_data)),
     )
 

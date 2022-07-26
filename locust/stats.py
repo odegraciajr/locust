@@ -863,6 +863,9 @@ def stats_history(runner: "Runner") -> None:
                 "current_fail_per_sec": stats.total.current_fail_per_sec or 0,
                 "response_time_percentile_95": stats.total.get_current_response_time_percentile(0.95) or 0,
                 "response_time_percentile_50": stats.total.get_current_response_time_percentile(0.5) or 0,
+                "response_time_percentile_99": stats.total.get_current_response_time_percentile(0.99) or 0,
+                "response_time_percentile_999": stats.total.get_current_response_time_percentile(0.999) or 0,
+                "response_time_percentile_9999": stats.total.get_current_response_time_percentile(0.9999) or 0,
                 "user_count": runner.user_count or 0,
             }
             stats.history.append(r)
