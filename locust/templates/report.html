@@ -92,13 +92,13 @@
                     <tr>
                         <th>Method</th>
                         <th>Name</th>
-                        <th>50%ile (ms)</th>
-                        <th>60%ile (ms)</th>
                         <th>70%ile (ms)</th>
                         <th>80%ile (ms)</th>
                         <th>90%ile (ms)</th>
                         <th>95%ile (ms)</th>
                         <th>99%ile (ms)</th>
+                        <th>99.9%ile (ms)</th>
+                        <th>99.99%ile (ms)</th>
                         <th>100%ile (ms)</th>
                     </tr>
                 </thead>
@@ -107,13 +107,13 @@
                         <tr{% if loop.last %} class="total"{% endif %}>
                             <td>{{ s.method or "" }}</td>
                             <td>{{ s.name }}</td>
-                            <td>{{ int(s.get_response_time_percentile(0.5)) }}</td>
-                            <td>{{ int(s.get_response_time_percentile(0.6)) }}</td>
                             <td>{{ int(s.get_response_time_percentile(0.7)) }}</td>
                             <td>{{ int(s.get_response_time_percentile(0.8)) }}</td>
                             <td>{{ int(s.get_response_time_percentile(0.9)) }}</td>
                             <td>{{ int(s.get_response_time_percentile(0.95)) }}</td>
                             <td>{{ int(s.get_response_time_percentile(0.99)) }}</td>
+                            <td>{{ int(s.get_response_time_percentile(0.999)) }}</td>
+                            <td>{{ int(s.get_response_time_percentile(0.9999)) }}</td>
                             <td>{{ int(s.get_response_time_percentile(1)) }}</td>
                         </tr>
                     {% endfor %}
